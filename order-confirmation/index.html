@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Bumbleb</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        
+        .confirmation-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .confirmation-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .success-icon::after {
+            content: '✓';
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        
+        .confirmation-header h1 {
+            font-size: 32px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        
+        .confirmation-header p {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .order-details {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .order-details h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .detail-value {
+            color: #333;
+        }
+        
+        .order-items {
+            margin-top: 20px;
+        }
+        
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .order-item-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .order-item-image {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 4px;
+            background: #ddd;
+        }
+        
+        .order-item-details h4 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+        }
+        
+        .order-item-details p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .order-item-price {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .order-totals {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+        }
+        
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .total-row.final {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .shipping-info {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .shipping-info h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        
+        .shipping-address {
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .next-steps {
+            background: #e8f5e9;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .next-steps h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2e7d32;
+        }
+        
+        .next-steps ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .next-steps li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .next-steps li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #45a049;
+        }
+        
+        .btn-secondary {
+            background: #ddd;
+            color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background: #ccc;
+        }
+        
+        .no-order {
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .no-order h2 {
+            color: #f44336;
+            margin-bottom: 15px;
+        }
+        
+        .no-order p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .confirmation-container {
+                margin: 20px;
+                padding: 20px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .order-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <div id="confirmation-content">
+            <div class="no-order">
+                <h2>Order Not Found</h2>
+                <p>We couldn't find your order information. This may be because the order has expired or you don't have a valid order ID.</p>
+                <a href="/shop/" class="btn btn-primary">Continue Shopping</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Order confirmation page functionality
+        (function() {
+            function getOrderFromUrl() {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get('order');
+            }
+            
+            function loadOrder(orderId) {
+                const orders = JSON.parse(localStorage.getItem('bumbleb_orders') || '[]');
+                return orders.find(order => order.orderId === orderId);
+            }
+            
+            function displayOrderConfirmation(order) {
+                const container = document.getElementById('confirmation-content');
+                
+                if (!order) {
+                    return;
+                }
+                
+                const orderDate = new Date(order.orderDate).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                
+                let orderItemsHtml = '';
+                let subtotal = 0;
+                
+                order.cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+                    
+                    orderItemsHtml += `
+                        <div class="order-item">
+                            <div class="order-item-info">
+                                ${item.image ? `<img src="${item.image}" alt="${item.name}" class="order-item-image">` : '<div class="order-item-image"></div>'}
+                                <div class="order-item-details">
+                                    <h4>${item.name}</h4>
+                                    <p>Quantity: ${item.quantity} × $${item.price.toFixed(2)}</p>
+                                </div>
+                            </div>
+                            <div class="order-item-price">$${itemTotal.toFixed(2)}</div>
+                        </div>
+                    `;
+                });
+                
+                const shipping = 10.00;
+                const total = subtotal + shipping;
+                
+                container.innerHTML = `
+                    <div class="confirmation-header">
+                        <div class="success-icon"></div>
+                        <h1>Order Confirmed!</h1>
+                        <p>Thank you for your purchase. Your order has been received and is being processed.</p>
+                    </div>
+                    
+                    <div class="order-details">
+                        <h2>Order Details</h2>
+                        <div class="detail-row">
+                            <span class="detail-label">Order ID:</span>
+                            <span class="detail-value">${order.orderId}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Order Date:</span>
+                            <span class="detail-value">${orderDate}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Email:</span>
+                            <span class="detail-value">${order.email}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Phone:</span>
+                            <span class="detail-value">${order.phone}</span>
+                        </div>
+                        
+                        <div class="order-items">
+                            <h3>Items Ordered</h3>
+                            ${orderItemsHtml}
+                            
+                            <div class="order-totals">
+                                <div class="total-row">
+                                    <span>Subtotal:</span>
+                                    <span>$${subtotal.toFixed(2)}</span>
+                                </div>
+                                <div class="total-row">
+                                    <span>Shipping:</span>
+                                    <span>$${shipping.toFixed(2)}</span>
+                                </div>
+                                <div class="total-row final">
+                                    <span>Total:</span>
+                                    <span>$${total.toFixed(2)}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="shipping-info">
+                        <h2>Shipping Address</h2>
+                        <div class="shipping-address">
+                            <strong>${order.firstName} ${order.lastName}</strong><br>
+                            ${order.address}<br>
+                            ${order.city}, ${order.state} ${order.zip}<br>
+                            ${order.country}
+                        </div>
+                        ${order.orderNotes ? `<p style="margin-top: 15px;"><strong>Order Notes:</strong> ${order.orderNotes}</p>` : ''}
+                    </div>
+                    
+                    <div class="next-steps">
+                        <h2>What's Next?</h2>
+                        <ul>
+                            <li>You will receive an email confirmation with your order details</li>
+                            <li>Your order will be processed within 1-2 business days</li>
+                            <li>You will receive shipping confirmation once your order ships</li>
+                            <li>Estimated delivery time: 5-7 business days</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <a href="/shop/" class="btn btn-primary">Continue Shopping</a>
+                        <a href="/checkout/" class="btn btn-secondary">Return to Checkout</a>
+                    </div>
+                `;
+            }
+            
+            // Initialize page
+            document.addEventListener('DOMContentLoaded', function() {
+                const orderId = getOrderFromUrl();
+                
+                if (orderId) {
+                    const order = loadOrder(orderId);
+                    if (order) {
+                        displayOrderConfirmation(order);
+                    }
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

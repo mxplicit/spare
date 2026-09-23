@@ -1,0 +1,13 @@
+{
+  "name": "bumbleb-website",
+  "version": "1.0.0",
+  "description": "Bumbleb Auto Parts Static Website",
+  "scripts": {
+    "dev": "wrangler pages dev .",
+    "deploy": "wrangler pages deploy .",
+    "build": "echo 'No build step required for static site'"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

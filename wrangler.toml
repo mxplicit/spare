@@ -1,0 +1,27 @@
+# Cloudflare Pages/Pages Functions configuration
+name = "bumbleb"
+compatibility_date = "2024-01-01"
+
+# Build configuration for static site
+[build]
+command = ""
+cwd = "."
+watch_dirs = [""]
+
+# Directory to serve as static files
+[site]
+bucket = "."
+
+# Environment variables (add your actual values)
+[vars]
+ENVIRONMENT = "production"
+
+# Pages Functions configuration
+[[pages_functions]]
+name = "api"
+path = "functions/api"
+
+# For development (optional)
+[dev]
+port = 8788
+local_protocol = "http"

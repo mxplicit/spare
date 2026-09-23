@@ -1,0 +1,271 @@
+{
+  "products": [
+    {
+      "id": "prod-001",
+      "name": "Engine Oil Filter",
+      "slug": "engine-oil-filter",
+      "price": 25.99,
+      "regular_price": 29.99,
+      "category": "engine-parts",
+      "subcategory": "oil-filters",
+      "description": "High-quality engine oil filter for optimal engine performance. Compatible with most vehicle models.",
+      "short_description": "Premium engine oil filter for reliable performance",
+      "images": [
+        "/product-images/engine-oil-filter-main.jpg",
+        "/product-images/engine-oil-filter-2.jpg"
+      ],
+      "brand": "AutoParts Pro",
+      "model": "Universal",
+      "year_compatibility": ["2020", "2021", "2022", "2023", "2024"],
+      "stock": 50,
+      "sku": "EOF-001",
+      "weight": 0.5,
+      "dimensions": {
+        "length": 10,
+        "width": 10,
+        "height": 15
+      },
+      "tags": ["engine", "oil", "filter", "maintenance"],
+      "rating": 4.5,
+      "reviews_count": 128,
+      "featured": true,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-15T00:00:00Z"
+    },
+    {
+      "id": "prod-002",
+      "name": "Brake Pads Set (Front)",
+      "slug": "brake-pads-set-front",
+      "price": 89.99,
+      "regular_price": 99.99,
+      "category": "brake-disks-pads",
+      "subcategory": "brake-pads",
+      "description": "Premium ceramic brake pads for safe and reliable stopping power. Low dust and noise.",
+      "short_description": "Ceramic brake pads for superior stopping performance",
+      "images": [
+        "/product-images/brake-pads-main.jpg",
+        "/product-images/brake-pads-2.jpg"
+      ],
+      "brand": "PremiumBrake",
+      "model": "Universal",
+      "year_compatibility": ["2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+      "stock": 30,
+      "sku": "BPF-002",
+      "weight": 2.5,
+      "dimensions": {
+        "length": 20,
+        "width": 15,
+        "height": 5
+      },
+      "tags": ["brake", "pads", "safety", "ceramic"],
+      "rating": 4.8,
+      "reviews_count": 256,
+      "featured": true,
+      "created_at": "2024-01-02T00:00:00Z",
+      "updated_at": "2024-01-15T00:00:00Z"
+    },
+    {
+      "id": "prod-003",
+      "name": "LED Headlight Kit",
+      "slug": "led-headlight-kit",
+      "price": 149.99,
+      "regular_price": 179.99,
+      "category": "lighting-parts",
+      "subcategory": "headlights",
+      "description": "Complete LED headlight conversion kit with easy installation. Bright white light output.",
+      "short_description": "LED headlight conversion kit for improved visibility",
+      "images": [
+        "/product-images/led-headlight-main.jpg",
+        "/product-images/led-headlight-2.jpg"
+      ],
+      "brand": "BrightLight",
+      "model": "Universal",
+      "year_compatibility": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+      "stock": 25,
+      "sku": "LHK-003",
+      "weight": 1.2,
+      "dimensions": {
+        "length": 15,
+        "width": 10,
+        "height": 8
+      },
+      "tags": ["lighting", "LED", "headlight", "visibility"],
+      "rating": 4.6,
+      "reviews_count": 89,
+      "featured": false,
+      "created_at": "2024-01-03T00:00:00Z",
+      "updated_at": "2024-01-15T00:00:00Z"
+    },
+    {
+      "id": "prod-004",
+      "name": "Car Battery 12V",
+      "slug": "car-battery-12v",
+      "price": 129.99,
+      "regular_price": 149.99,
+      "category": "electronics-parts",
+      "subcategory": "batteries",
+      "description": "High-performance 12V car battery with extended life and reliable starting power.",
+      "short_description": "Reliable 12V car battery with extended life",
+      "images": [
+        "/product-images/car-battery-main.jpg"
+      ],
+      "brand": "PowerCell",
+      "model": "Universal",
+      "year_compatibility": ["all"],
+      "stock": 40,
+      "sku": "CB-004",
+      "weight": 15.0,
+      "dimensions": {
+        "length": 30,
+        "width": 20,
+        "height": 25
+      },
+      "tags": ["battery", "electronics", "12V", "power"],
+      "rating": 4.7,
+      "reviews_count": 312,
+      "featured": true,
+      "created_at": "2024-01-04T00:00:00Z",
+      "updated_at": "2024-01-15T00:00:00Z"
+    },
+    {
+      "id": "prod-005",
+      "name": "Synthetic Motor Oil 5W-30",
+      "slug": "synthetic-motor-oil-5w-30",
+      "price": 45.99,
+      "regular_price": 54.99,
+      "category": "oil-lubricants",
+      "subcategory": "motor-oil",
+      "description": "Premium synthetic motor oil 5W-30 for superior engine protection and performance.",
+      "short_description": "Synthetic motor oil for engine protection",
+      "images": [
+        "/product-images/motor-oil-main.jpg"
+      ],
+      "brand": "LubriTech",
+      "model": "Universal",
+      "year_compatibility": ["all"],
+      "stock": 100,
+      "sku": "SMO-005",
+      "weight": 4.5,
+      "dimensions": {
+        "length": 25,
+        "width": 15,
+        "height": 30
+      },
+      "tags": ["oil", "lubricant", "synthetic", "5W-30"],
+      "rating": 4.9,
+      "reviews_count": 567,
+      "featured": true,
+      "created_at": "2024-01-05T00:00:00Z",
+      "updated_at": "2024-01-15T00:00:00Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "engine-parts",
+      "name": "Engine Parts",
+      "slug": "engine-parts",
+      "description": "All engine components and accessories",
+      "image": "/category-images/engine-parts.jpg",
+      "parent": null,
+      "count": 150
+    },
+    {
+      "id": "brake-disks-pads",
+      "name": "Brake Disks & Pads",
+      "slug": "brake-disks-pads",
+      "description": "Brake system components including disks and pads",
+      "image": "/category-images/brake-parts.jpg",
+      "parent": null,
+      "count": 89
+    },
+    {
+      "id": "lighting-parts",
+      "name": "Lighting Parts",
+      "slug": "lighting-parts",
+      "description": "Vehicle lighting components and accessories",
+      "image": "/category-images/lighting-parts.jpg",
+      "parent": null,
+      "count": 67
+    },
+    {
+      "id": "electronics-parts",
+      "name": "Electronics Parts",
+      "slug": "electronics-parts",
+      "description": "Electronic components and accessories",
+      "image": "/category-images/electronics-parts.jpg",
+      "parent": null,
+      "count": 134
+    },
+    {
+      "id": "oil-lubricants",
+      "name": "Oil & Lubricants",
+      "slug": "oil-lubricants",
+      "description": "Motor oils, lubricants, and fluids",
+      "image": "/category-images/oil-lubricants.jpg",
+      "parent": null,
+      "count": 78
+    },
+    {
+      "id": "steering-parts",
+      "name": "Steering Parts",
+      "slug": "steering-parts",
+      "description": "Steering system components",
+      "image": "/category-images/steering-parts.jpg",
+      "parent": null,
+      "count": 45
+    },
+    {
+      "id": "body-parts",
+      "name": "Body Parts",
+      "slug": "body-parts",
+      "description": "Exterior body components and panels",
+      "image": "/category-images/body-parts.jpg",
+      "parent": null,
+      "count": 112
+    }
+  ],
+  "brands": [
+    {
+      "id": "autoparts-pro",
+      "name": "AutoParts Pro",
+      "slug": "autoparts-pro",
+      "description": "Professional quality auto parts",
+      "image": "/brand-images/autoparts-pro.jpg"
+    },
+    {
+      "id": "premiumbrake",
+      "name": "PremiumBrake",
+      "slug": "premiumbrake",
+      "description": "High-performance brake components",
+      "image": "/brand-images/premiumbrake.jpg"
+    },
+    {
+      "id": "brightlight",
+      "name": "BrightLight",
+      "slug": "brightlight",
+      "description": "Advanced lighting solutions",
+      "image": "/brand-images/brightlight.jpg"
+    },
+    {
+      "id": "powercell",
+      "name": "PowerCell",
+      "slug": "powercell",
+      "description": "Reliable battery technology",
+      "image": "/brand-images/powercell.jpg"
+    },
+    {
+      "id": "lubritech",
+      "name": "LubriTech",
+      "slug": "lubritech",
+      "description": "Premium lubricants and fluids",
+      "image": "/brand-images/lubritech.jpg"
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2024-01-15T00:00:00Z",
+    "total_products": 5,
+    "total_categories": 7,
+    "total_brands": 5
+  }
+}

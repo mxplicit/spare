@@ -1,0 +1,8 @@
+# Cloudflare Pages redirects configuration
+# This file controls URL redirects for your site
+
+# Handle trailing slashes
+# /* /:splat 200
+
+# Redirect old WordPress paths if needed
+# /old-path /new-path 301
